@@ -10,30 +10,58 @@
         android:layout_marginHorizontal="0dp"
         android:background="@drawable/rounded">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="4dp"
             android:paddingVertical="2dp"
+
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="David Mwanza"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/textcolor"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/jina"
                 android:textColor="@color/textcolor"
                 android:textSize="20dp"
-android:textStyle="italic"                android:layout_width="match_parent"
+                android:textStyle="italic"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="+254713836954"
+                android:layout_below="@+id/name"/>
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19-2-2019"
                 android:textColor="@color/textcolor"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
+                android:layout_toRightOf="@+id/name"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="1000"
+                android:layout_toRightOf="@+id/jina"
+android:layout_below="@+id/date"
+                android:textColor="@color/textcolor"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+
+
 
             <View
                 android:layout_width="match_parent"
@@ -41,7 +69,7 @@ android:textStyle="italic"                android:layout_width="match_parent"
                 android:background="#000000"/>
 
 
-        </LinearLayout>
+        </RelativeLayout>
 
 
     </androidx.cardview.widget.CardView>
