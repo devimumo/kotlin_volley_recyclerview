@@ -52,11 +52,18 @@ recycler_view.layoutManager=LinearLayoutManager(this)
         users_list.add(User("davy","machakos"))
         users_list.add(User("Faith","Kithimani"))
         users_list.add(User("Mary","Nairobi"))
+
+
+        users_list.add(User("davy","machakos"))
+        users_list.add(User("Faith","Kithimani"))
+        users_list.add(User("Mary","Nairobi"))
         users_list.add(User("Justo","JKitengela"))
         users_list.add(User("Daniel","Eldoret"))
         users_list.add(User("Jeffry","Matuu"))
         users_list.add(User("Antony","Mombasa"))
         users_list.add(User("Libi","Kisumu"))
+
+
 
         val adap=Volley_Adapter(users_list)
         recycler_view.adapter=adap
