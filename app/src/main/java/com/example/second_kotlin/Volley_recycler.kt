@@ -1,5 +1,6 @@
 package com.example.second_kotlin
 
+import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.view.textclassifier.TextSelection
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -25,6 +27,8 @@ class Volley_recycler : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_volley_recycler)
+
+
 
 
 recycler_view.layoutManager=LinearLayoutManager(this)
@@ -44,13 +48,17 @@ loaddata(users_list);
 
     private fun loaddata(users_list: ArrayList<User>)
     {
-
+        val progressbar: ProgressDialog=ProgressDialog(this)
+        progressbar.setMessage("Loading..........")
+        progressbar.setCancelable(false)
+        progressbar.show()
 
 // Instantiate the RequestQueue.
         val queue = Volley.newRequestQueue(this)
         val url = "http://project-daudi.000webhostapp.com/recycler/check_tiko.php"
 
-// Request a string response from the provided URL.
+
+        // Request a string response from the provided URL.
        val stringRequest= StringRequest(Request.Method.POST,url,
            Response.Listener<String>
            { tickets_data ->
@@ -78,9 +86,14 @@ loaddata(users_list);
                  val adap=Volley_Adapter(users_list)
                  recycler_view.adapter=adap
 
+                 progressbar.dismiss()
+
              }
              catch (e: JSONException)
              {
+
+                 progressbar.dismiss()
+
                  Toast.makeText(this,"no data received"+e,Toast.LENGTH_LONG).show()
 
 
@@ -89,7 +102,16 @@ loaddata(users_list);
            },Response.ErrorListener
            {
 
+               progressbar.dismiss()
+
+               Toast.makeText(this,"eeror",Toast.LENGTH_LONG).show()
+
            })
+
+
+
+
+        //psendind params with volley request
 // Add the request to the RequestQueue.
         queue.add(stringRequest)
 
