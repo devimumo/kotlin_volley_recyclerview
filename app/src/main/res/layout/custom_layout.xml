@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
 
     <androidx.cardview.widget.CardView
+        card_view:cardElevation="2dp"
+        android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingVertical="5dp"
+        android:layout_marginVertical="2dp"
+        android:clickable="true"
+        android:outlineSpotShadowColor="@color/colorPrimary"
         android:layout_marginHorizontal="0dp"
+
         android:background="@drawable/rounded">
 
         <RelativeLayout
@@ -21,52 +29,67 @@
             <TextView
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="29dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="96dp"
+                android:layout_marginLeft="96dp"
                 android:text="David Mwanza"
-                android:layout_marginRight="20dp"
                 android:textColor="@color/textcolor"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
+
             <TextView
                 android:id="@+id/jina"
-                android:textColor="@color/textcolor"
-                android:textSize="20dp"
-                android:textStyle="italic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="53dp"
+                android:layout_marginRight="53dp"
+                android:layout_toStartOf="@+id/amount"
+                android:layout_toLeftOf="@+id/amount"
                 android:text="+254713836954"
-                android:layout_below="@+id/name"/>
+                android:textColor="@color/textcolor"
+                android:textSize="20dp"
+                android:textStyle="italic" />
 
             <TextView
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+
+                android:layout_marginEnd="3dp"
+                android:layout_marginRight="3dp"
+                android:gravity="center"
                 android:text="19-2- 2019"
                 android:textColor="@color/textcolor"
                 android:textSize="20dp"
-                android:layout_toRightOf="@+id/name"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/date"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginRight="23dp"
                 android:text="1000"
-                android:layout_toRightOf="@+id/jina"
-android:layout_below="@+id/date"
                 android:textColor="@color/textcolor"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-
-
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#000000"/>
+            <ImageView
+                android:id="@+id/imageV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card_view:srcCompat="@mipmap/ic_launcher_round" />
 
 
         </RelativeLayout>

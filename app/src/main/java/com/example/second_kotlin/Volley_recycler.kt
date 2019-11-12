@@ -10,6 +10,8 @@ import kotlinx.android.synthetic.main.activity_volley_recycler.*
 import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.nfc.Tag
+import android.util.Log
 import android.view.textclassifier.TextSelection
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -31,7 +33,7 @@ class Volley_recycler : AppCompatActivity() {
 
 
 
-recycler_view.layoutManager=LinearLayoutManager(this)
+recycler_view.layoutManager=LinearLayoutManager(parent)
 
 
 
@@ -40,7 +42,10 @@ recycler_view.layoutManager=LinearLayoutManager(this)
 
 loaddata(users_list);
 
+recycler_view.setOnClickListener {
 
+    Toast.makeText(this,"no data received"+it,Toast.LENGTH_LONG).show()
+}
 
     }
 
@@ -57,6 +62,7 @@ loaddata(users_list);
         val queue = Volley.newRequestQueue(this)
         val url = "http://project-daudi.000webhostapp.com/recycler/check_tiko.php"
 
+       // val url = "http://192.168.43.121/recycler/check_tiko.php"
 
         // Request a string response from the provided URL.
        val stringRequest= StringRequest(Request.Method.POST,url,
@@ -82,11 +88,11 @@ loaddata(users_list);
          users_list.add(tickets_dataaa)
                  }
 
-
+                 progressbar.dismiss()
                  val adap=Volley_Adapter(users_list)
                  recycler_view.adapter=adap
 
-                 progressbar.dismiss()
+
 
              }
              catch (e: JSONException)
@@ -95,6 +101,7 @@ loaddata(users_list);
                  progressbar.dismiss()
 
                  Toast.makeText(this,"no data received"+e,Toast.LENGTH_LONG).show()
+                 Log.i("catch_e",e.toString())
 
 
              }
@@ -102,9 +109,11 @@ loaddata(users_list);
            },Response.ErrorListener
            {
 
+
                progressbar.dismiss()
 
-               Toast.makeText(this,"eeror",Toast.LENGTH_LONG).show()
+               Toast.makeText(this,"eeror"+it,Toast.LENGTH_LONG).show()
+              Log.d("hhht",it.toString())
 
            })
 
@@ -118,4 +127,9 @@ loaddata(users_list);
 
 
     }
+
+    public  fun dosomethibg()
+    {}
+
+
 }

@@ -6,62 +6,96 @@
     android:layout_height="match_parent"
     android:paddingHorizontal="45dp"
     android:background="@drawable/paris"
-    tools:context=".LauncherActivity">
+    tools:context="com.example.second_kotlin.LauncherActivity">
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Name"
-        android:gravity="center"
         android:background="@drawable/rounded_edittext"
-        android:textStyle="normal"
+        android:ems="10"
+        android:gravity="center"
+        android:hint=""
+        android:inputType="textPersonName"
+        android:textColor="@color/launc"
 
         android:textColorHint="@color/textcolor"
-        android:textColor="@color/launc"
+        android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.439"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22" />
+        app:layout_constraintVertical_bias="0.318" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="0dp"
         android:layout_height="40dp"
+        android:background="@drawable/rounded_edittext"
         android:ems="10"
         android:gravity="center"
-
+        android:hint=""
         android:inputType="number"
-        android:textColorHint="@color/textcolor"
-
-        android:background="@drawable/rounded_edittext"
-
-        android:hint="0713836954"
         android:textColor="@color/launc"
+        android:textColorHint="@color/textcolor"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.439"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText"
-        app:layout_constraintVertical_bias="0.14" />
+        app:layout_constraintVertical_bias="0.081" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="58dp"
         android:layout_marginTop="48dp"
         android:background="@drawable/_button"
-        android:text="Button"
+        android:text="Login"
         android:textSize="15dp"
-        android:layout_marginHorizontal="58dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2"
-        app:layout_constraintVertical_bias="0.018" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.356"
+        app:srcCompat="@drawable/daystar" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Have an account?Register"
+        android:textColor="#ffffff"
+        android:onClick="register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.228" />
 </androidx.constraintlayout.widget.ConstraintLayout>

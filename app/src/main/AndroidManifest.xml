@@ -11,15 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Register"></activity>
+        <activity android:name=".SeatsActivity" />
+        <activity android:name=".SecondActivity" />
+        <activity android:name=".Volley_recycler" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".LauncherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Volley_recycler"></activity>
-        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
