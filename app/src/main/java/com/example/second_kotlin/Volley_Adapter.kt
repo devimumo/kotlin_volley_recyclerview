@@ -44,6 +44,9 @@ val user_data: User=user_list[position]
 
 
         holder.itemview.card_view.setOnClickListener {
+
+
+
 val gg:String=position.toString()
             val ff=user_data.name
             holder.itemview.jina.text=gg
@@ -60,6 +63,14 @@ Toast.makeText(it.context,"clicked"+ff,Toast.LENGTH_LONG).show()
 
 
 
+
+    }
+
+    fun removeItem(viewHolder:RecyclerView.ViewHolder )
+    {
+
+        user_list.removeAt(viewHolder.adapterPosition)
+        notifyItemRemoved(viewHolder.adapterPosition)
 
     }
 
