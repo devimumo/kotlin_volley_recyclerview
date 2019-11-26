@@ -8,6 +8,8 @@ import android.os.Bundle
 import android.util.Base64
 import android.util.Log
 import android.view.View
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
 import com.android.volley.AuthFailureError
@@ -40,6 +42,12 @@ class LauncherActivity : AppCompatActivity() {
           startActivity(intent)
       }
 
+        textView2.setOnClickListener {
+            val intent=Intent(this,Signup::class.java)
+            startActivity(intent)
+
+        }
+
         button.setOnClickListener {
 
 login();
@@ -57,6 +65,9 @@ login();
         val names = editText.text
         val password = editText2.text
 
+
+        //checks whether user has entered details
+        //if true,executes login code
         if (names.isNotEmpty() && password.isNotEmpty()) {
             val progressbar: ProgressDialog = ProgressDialog(this)
             progressbar.setMessage("Loading..........")
@@ -94,13 +105,15 @@ if (res.equals("successful"))
              // Your success code here
          }, Response.ErrorListener { e ->
              // Your error code here
+             progressbar.dismiss()
+
          }) {
 
              @Throws(AuthFailureError::class)
              override fun getParams(): Map<String, String> {
                  val params = HashMap<String, String>()
 
-                 params.put("phone_number","$names");
+                 params.put("phone_number","+254$names");
                  params.put("password","$password");
 
 
@@ -116,9 +129,20 @@ if (res.equals("successful"))
 
 
 }
+
+        //called when edit text does not have content
+        else
+        {
+
+            val phone_number: EditText=findViewById(R.id.editText)
+            val password: EditText=findViewById(R.id.editText2)
+
+            phone_number.setError("required")
+            password.setError("required")
+
+        }
 }
 
-    fun register(view: View) {}
 
 
 }

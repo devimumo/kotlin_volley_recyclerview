@@ -102,7 +102,7 @@ recycler_view.setOnClickListener {
                 {
                     swipeBackground.setBounds(itemview.right+dX.toInt(),itemview.top,itemview.right,itemview.bottom)
                 }
-c.save()
+              c.save()
                 swipeBackground.draw(c)
                 if (dX>0)
                 {c.clipRect(itemview.left,itemview.top,dX.toInt(),itemview.bottom)}

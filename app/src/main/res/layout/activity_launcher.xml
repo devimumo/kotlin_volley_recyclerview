@@ -8,42 +8,73 @@
     android:background="@drawable/paris"
     tools:context="com.example.second_kotlin.LauncherActivity">
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:background="@drawable/rounded_edittext"
-        android:ems="10"
-        android:gravity="center"
-        android:hint=""
-        android:inputType="textPersonName"
-        android:textColor="@color/launc"
 
-        android:textColorHint="@color/textcolor"
-        android:textStyle="normal"
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_edittext_username"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.318" />
+        app:layout_constraintVertical_bias="0.318"
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:background="@drawable/rounded_edittext"
-        android:ems="10"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+254"
+            android:textSize="20dp"/>
+
+
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint=""
+            android:inputType="number"
+            android:textColor="@color/launc"
+
+            android:textColorHint="@color/textcolor"
+            android:textStyle="normal"
+            />
+
+    </LinearLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/toggle"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
         android:gravity="center"
-        android:hint=""
-        android:inputType="number"
-        android:textColor="@color/launc"
-        android:textColorHint="@color/textcolor"
-        android:textStyle="normal"
+
+        app:passwordToggleEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        app:layout_constraintVertical_bias="0.081" />
+        app:layout_constraintTop_toBottomOf="@+id/linear"
+        app:layout_constraintVertical_bias="0.081">
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:gravity="center"
+            android:hint=""
+            android:background="@drawable/rounded_edittext"
+
+            android:inputType="numberPassword"
+            android:textColor="@color/launc"
+            android:textColorHint="@color/textcolor"
+            android:textStyle="normal"
+           />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
     <Button
         android:id="@+id/button"
@@ -58,7 +89,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/toggle"
         app:layout_constraintVertical_bias="0.0" />
 
     <ProgressBar
@@ -77,7 +108,7 @@
         android:id="@+id/imageView2"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintBottom_toTopOf="@+id/linear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

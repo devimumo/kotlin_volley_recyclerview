@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Register"></activity>
-        <activity android:name=".SeatsActivity" />
+        <activity android:name=".Signup" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".Volley_recycler" />
         <activity android:name=".MainActivity" />
